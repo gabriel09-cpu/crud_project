@@ -6,17 +6,15 @@ class Books(Base):
     id= Column(Integer, primary_key=True, index=True)
     title= Column(String, nullable=False)
     author= Column(String, nullable=False)
-    year= Column(Integer)
+    year= Column(String)
     description= Column(String)
     read= Column(Boolean, default=False)
 
 
-title="A Psicologia Finaceira"
-author= "Morgan Housel"
-year=2020
-description= """ O livro aborda como o comportamento, 
-    emoções e experiências pessoais influenciam as decisões financeiras, 
-    mais do que o conhecimento técnico."""
+title="Sobre a Tranquilidade da Alma"
+author= "Sêneca"
+year="~60 d.C."
+description= """ Explora como alcançar paz interior em meio às dificuldades da vida. Discute equilíbrio emocional, propósito e a importância da moderação."""
 read= False
 novo=Books(title=title,author=author,year=year,
              description=description, read=read)
