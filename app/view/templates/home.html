@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" href="/static/css/home.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
     <title>Alpha Books</title>
 </head>
+
 <body>
     <div class="header">
         <h1>Alpha Books</h1>
@@ -20,23 +26,23 @@
     </div>
 
     <main class="books">
-            <h2>Lidos Recentemente:</h2>
-            <section>
-                {% if books %}
-                {% for book in books %}
-                <div class="books">
-                    <h2>{{book.title}}</h2>
-                    <p>{{book.author}}</p>
-                    <p>{{book.description}}</p>
-                   <form action="/details">
-                    <button type="submit">Acompanhar Progresso</button>
-                   </form>
-                </div>
-                {% endfor %}
-                {% else %}
-                <p>Nenhum livro adicionado ainda.</p>
-                {% endif %}
-            </section>
-        </main>
+        <h2>Lidos Recentemente:</h2>
+        <section>
+            {% if books %}
+            {% for book in books %}
+            <div class="books">
+                <h2>{{book.title}}</h2>
+                <p>{{book.author}}</p>
+                <p>{{book.description}}</p>
+                <a href="/books/{{ book.id }}" class="botom">Detalhes da Leitura
+                </a>
+            </div>
+            {% endfor %}
+            {% else %}
+            <p>Nenhum livro adicionado ainda.</p>
+            {% endif %}
+        </section>
+    </main>
 </body>
+
 </html>
