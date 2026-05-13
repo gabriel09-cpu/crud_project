@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/static/css/home.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha Books</title>
+</head>
+<body>
+    <div class="header">
+        <h1>Alpha Books</h1>
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Reading</a></li>
+                <li><a href="">Checked</a></li>
+                <li><a href="">Resumes</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main class="books">
+            <h2>Lidos Recentemente:</h2>
+            <section>
+                {% if books %}
+                {% for book in books %}
+                <div class="books">
+                    <h2>{{book.title}}</h2>
+                    <p>{{book.author}}</p>
+                    <p>{{book.description}}</p>
+                   <form action="/details">
+                    <button type="submit">Acompanhar Progresso</button>
+                   </form>
+                </div>
+                {% endfor %}
+                {% else %}
+                <p>Nenhum livro adicionado ainda.</p>
+                {% endif %}
+            </section>
+        </main>
+</body>
+</html>
