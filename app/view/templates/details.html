@@ -1,13 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/details.css">
+    
     <title>Detalhes da Leitura</title>
 </head>
 <body>
+     <div class="header">
+        <h1>Alpha Books</h1>
+        <nav>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Reading</a></li>
+                <li><a href="">Checked</a></li>
+                <li><a href="">Resumes</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="container">
+    <div class="content">
     <h1>{{ book.title }}</h1>
+    <label class="check">
+        <input class="check-input" type="checkbox" disabled {% if book.read %}checked{% endif %}>
+    </label>
+    </div>
+    <h5>{{book.author}}</h5>
     <h4>Decrição:</h4>
     <p>{{ book.description }}</p>
+    </div>
+
+
 </body>
 </html>

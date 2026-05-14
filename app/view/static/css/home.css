@@ -1,9 +1,9 @@
 *{
-    font-family: "Open Sans", sans-serif;
+    font-family: "Quicksand", sans-serif;
 }
 
 body{
-    margin: 0;
+    margin: auto;
 }
 
 .header {
@@ -85,7 +85,7 @@ section {
 }
 
 .botom{
-    background-color: #15c302;
+    background-color: #14b402;
     border-radius: 2px;
     text-decoration: none;
     font-size: 200px;
@@ -100,4 +100,7 @@ section {
 .botom:hover{
     background-color: #0e8e00;
     transform: translateY(-10px);
+}
+.read{
+    text-decoration: line-through;
 }
