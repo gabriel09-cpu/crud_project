@@ -36,20 +36,20 @@
     <h5>{{book.author}}</h5>
     <h5>Página Atual: {{book.page}}</h5>
     <h4>Decrição:</h4>
-    <p>{{ book.description }}</p>
+    <p class="description">{{ book.description }}</p>
     </div>
 
-    <button onclick="abrirModalEdicao({{ book.id }})">Editar Livro</button>
+    <button onclick="abrirModalEdicao({{ book.id }})" class="editar-livro">Editar Livro</button>
 
-    <div id="modalEdicao" style="display: none; padding: fixed; background: white; border: 1px solid #ccc; padding: 20px;">
+    <div id="modalEdicao"  class="modalEdicao">
         <h3>Editar Livro</h3>
         <input type="hidden" id="edit-id">
         <input type="text" id="edit-title" placeholder="Título">
         <input type="text" id="edit-author" placeholder="Autor">
+        <input type="number" id="edit-page" placeholder="Página Atual">
         <label for="edit-read">
             Lido: <input type="checkbox" id="edit-read">
-        </label>
-        <input type="number" id="edit-page" placeholder="Página Atual"><br>
+        </label><br>
 
         <button type="button" onclick="salvarEdicao()">Update Book</button>
         <button type="button" onclick="fecharModal()">Cancel</button>
