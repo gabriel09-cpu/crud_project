@@ -12,13 +12,13 @@ class Books(Base):
     read = Column(Boolean, default=False)
 
 
-# title = "Senhor dos Aneis"
+# title = "Senhor dos betas"
 # author = "Neymar"
-# year = "Quando tava no barcelona"
+# year = "antes de Cisto"
 # description = (
 #         """ Explora como alcançar paz interior em meio às dificuldades da vida. Discute equilíbrio emocional, propósito e a importância da moderação."""
 #     )
-# read = False
+# read = True
 # page = 12
 # novo = Books(
 #         title=title,

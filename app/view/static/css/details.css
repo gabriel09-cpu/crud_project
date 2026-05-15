@@ -45,10 +45,14 @@
 
 .content {
     display: flex;
-    /* align-items: center; */
+    align-items: center;
     gap: 15px;
 }
 
 .content h1 {
     margin: 0;
+    padding-top: 12px;
+}
+.check{
+    padding-top: 12px;
 }

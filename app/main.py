@@ -2,9 +2,19 @@ from fastapi import Request, FastAPI, status
 from app.routes.book_router import router
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="Alpha Books")
 templates = Jinja2Templates(directory="app/view/templates")
+
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"], # Em produção, coloque a URL do seu site aqui
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app.mount("/static", StaticFiles(directory="app/view/static"), name="static")
 app.include_router(router)
