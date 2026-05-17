@@ -1,7 +1,7 @@
 from app.database import get_db
 from app.models import Books
-from app.schemas import Book, BookUpdate
-from fastapi import APIRouter, Request, Depends, FastAPI, HTTPException, status
+from app.schemas import Book, BookUpdate, BookCreate
+from fastapi import APIRouter, Request, Depends, FastAPI, HTTPException, status, Form
 from sqlalchemy.orm import Session
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
@@ -16,6 +16,16 @@ templates = Jinja2Templates(directory="app/view/templates")
 
 UPLOAD_DIR = "app/view/static/uploads"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
+
+
+@router.post("/books/create")
+async def add_book(book_data: BookCreate, db: Session = Depends(get_db)):
+    new_book = Books(**book_data.model_dump())
+
+    db.add(new_book)
+    db.commit()
+    db.refresh(new_book)
+    return new_book
 
 @router.get("/", response_class=HTMLResponse)
 async def page_books(request: Request, db:Session=Depends(get_db)):

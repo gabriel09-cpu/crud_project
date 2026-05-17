@@ -25,6 +25,20 @@
       </nav>
     </div>
 
+    <div>
+      <button onclick="abrirModalCriacao()">Adicionar Livro</button>
+    </div>
+
+    <div id="modalCreate" class="modalCreate">
+      <h3>Adicionar Livro</h3>
+      <input type="text" name="" id="add-title" placeholder="Título">
+      <input type="text" name="" id="add-author" placeholder="Autor">
+      <input type="number" name="" id="add-page" placeholder="Página Atual">
+
+      <button type="button">Save</button>
+      <button type="button">Cancel</button>
+    </div>
+
     <main class="books">
       <h2>Lidos Recentemente:</h2>
       <section>
@@ -55,6 +69,6 @@
       </section>
     </main>
 
-    <script src="../static/scripts/home.js"></script>
+    <script src="../static/scripts/create.js"></script>
   </body>
 </html>
